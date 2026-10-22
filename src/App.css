@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
@@ -1392,5 +1391,196 @@ nav a:hover::after {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Photo d'accueil — ajout sans modifier le style existant */
+.hero-profile-layout {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+
+.profile-frame {
+  position: relative;
+  z-index: 2;
+  width: 270px;
+  height: 330px;
+  padding: 7px;
+  border: 1px solid rgba(181, 138, 255, 0.7);
+  border-radius: 140px 140px 35px 35px;
+  background: linear-gradient(145deg, #cdb0ff, #542b83, #100b1c);
+  box-shadow: 0 0 45px #9c5cff30;
+}
+
+.profile-frame-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 135px 135px 29px 29px;
+  background: #100b1c;
+}
+
+.hero-profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.92);
+  transition: transform 0.5s ease;
+}
+
+.profile-frame:hover .hero-profile-photo {
+  transform: scale(1.04);
+}
+
+.profile-orbit {
+  position: absolute;
+  border: 1px solid #bd96ff30;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.profile-orbit-one {
+  width: 310px;
+  height: 310px;
+  animation: orbit-spin 24s linear infinite;
+}
+
+.profile-orbit-two {
+  width: 420px;
+  height: 245px;
+  transform: rotate(-35deg);
+  border-color: #9a63ff35;
+  animation: orbit-spin 30s linear infinite reverse;
+}
+
+.profile-orbit-three {
+  width: 250px;
+  height: 400px;
+  transform: rotate(48deg);
+  border-style: dashed;
+  border-color: #a77aff25;
+  animation: orbit-spin 40s linear infinite;
+}
+
+.profile-cross {
+  position: absolute;
+  z-index: 3;
+  color: #c3a2ff;
+  opacity: 0.7;
+  font: 20px var(--mono);
+  animation: cross-glow 3s ease-in-out infinite alternate;
+}
+
+.profile-cross-one {
+  top: 65px;
+  left: 12%;
+}
+
+.profile-cross-two {
+  right: 10%;
+  bottom: 65px;
+  animation-delay: -1s;
+}
+
+.profile-label {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 172px;
+  padding: 13px;
+  background: #100c18ef;
+  border: 1px solid #b58aff35;
+  box-shadow: 0 12px 50px #0005;
+  animation: label-float 5s ease-in-out infinite;
+}
+
+.profile-label-top {
+  top: 72px;
+  right: -5px;
+}
+
+.profile-label-bottom {
+  bottom: 68px;
+  left: -12px;
+  animation-delay: -2.5s;
+}
+
+.profile-label-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b58aff45;
+  color: #c7a4ff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.profile-label > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profile-label small {
+  color: #81758f;
+  font: 8px var(--mono);
+}
+
+.profile-label b {
+  font: 10px var(--mono);
+  letter-spacing: 1px;
+}
+
+.profile-label > i {
+  width: 5px;
+  height: 5px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #b58aff;
+  box-shadow: 0 0 10px #b58aff;
+  flex-shrink: 0;
+}
+
+@media (max-width: 620px) {
+  .profile-frame {
+    width: 230px;
+    height: 285px;
+  }
+
+  .profile-orbit-one {
+    width: 255px;
+    height: 255px;
+  }
+
+  .profile-orbit-two {
+    width: 325px;
+    height: 205px;
+  }
+
+  .profile-orbit-three {
+    width: 200px;
+    height: 325px;
+  }
+
+  .profile-label-top {
+    top: 37px;
+    right: -5px;
+  }
+
+  .profile-label-bottom {
+    bottom: 43px;
+    left: -5px;
+  }
+
+  .profile-label {
+    min-width: 150px;
+    padding: 10px;
   }
 }

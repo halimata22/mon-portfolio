@@ -1,5 +1,6 @@
 
 import "./App.css";
+import maPhoto from "./assets/ma-photo.jpg";
 
 const skills = [
   {
@@ -31,7 +32,12 @@ const skills = [
     icon: "⬡",
     name: "Cybersécurité",
     color: "pink",
-    items: ["Sécurité informatique", "Menaces & vulnérabilités", "Bonnes pratiques", "Sensibilisation"],
+    items: [
+      "Sécurité informatique",
+      "Menaces & vulnérabilités",
+      "Bonnes pratiques",
+      "Sensibilisation",
+    ],
     level: "NOTIONS & FORMATION",
   },
   {
@@ -39,7 +45,12 @@ const skills = [
     icon: "▤",
     name: "Systèmes & support IT",
     color: "orange",
-    items: ["Windows", "Installation logiciels", "Configuration de postes", "Support technique"],
+    items: [
+      "Windows",
+      "Installation logiciels",
+      "Configuration de postes",
+      "Support technique",
+    ],
     level: "EXPÉRIENCE PRATIQUE",
   },
   {
@@ -75,25 +86,24 @@ const projects = [
     linkText: "Explorer le dépôt",
     visual: "interface",
   },
+  
   {
     number: "03",
-    type: "RÉSEAUX & CYBERSÉCURITÉ",
-    title: "Laboratoire réseau",
+    type: "GESTION & ERP",
+    title: "Gestion d’inventaire avec Odoo",
     description:
-      "Espace destiné à présenter tes exercices Packet Tracer, tes configurations réseau et tes futurs travaux pratiques.",
-    tags: ["Cisco", "Réseaux"],
+      "Projet réalisé dans le cadre de ma formation, consacré à la configuration de modules Odoo pour la gestion de l’inventaire et le suivi des stocks.",
+    tags: ["Odoo ERP", "Inventaire", "Gestion des stocks"],
     link: null,
-    linkText: "Projet à compléter",
-    visual: "network",
+    link: "https://github.com/halimata22/odoo-gestion-inventaire.git",
+
+    linkText: "Explorer le dépôt",
   },
+
 ];
 
 function Reveal({ children, className = "" }) {
-  return (
-    <div className={`reveal ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`reveal ${className}`}>{children}</div>;
 }
 
 function SkillCard({ skill, index }) {
@@ -146,13 +156,24 @@ function ProjectCard({ project }) {
         {project.visual === "interface" && (
           <div className="interface-art">
             <div className="interface-sidebar">
-              <i /><i /><i />
+              <i />
+              <i />
+              <i />
             </div>
             <div className="interface-content">
               <div className="interface-heading" />
-              <div className="interface-row"><i /><i /></div>
-              <div className="interface-row"><i /><i /></div>
-              <div className="interface-row"><i /><i /></div>
+              <div className="interface-row">
+                <i />
+                <i />
+              </div>
+              <div className="interface-row">
+                <i />
+                <i />
+              </div>
+              <div className="interface-row">
+                <i />
+                <i />
+              </div>
             </div>
           </div>
         )}
@@ -177,11 +198,18 @@ function ProjectCard({ project }) {
         <p className="project-description">{project.description}</p>
 
         <div className="project-tags">
-          {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+          {project.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
         </div>
 
         {project.link ? (
-          <a href={project.link} target="_blank" rel="noreferrer" className="project-link">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="project-link"
+          >
             {project.linkText} <span>↗</span>
           </a>
         ) : (
@@ -201,14 +229,17 @@ function App() {
 
       <header className="navbar">
         <a href="#accueil" className="logo">
-          H<span>.</span><small>PORTFOLIO</small>
+          H<span>.</span>
+          <small>PORTFOLIO</small>
         </a>
 
         <nav>
           <a href="#apropos">À propos</a>
           <a href="#competences">Compétences</a>
           <a href="#projets">Projets</a>
-          <a href="#contact" className="nav-contact">Me contacter ↗</a>
+          <a href="#contact" className="nav-contact">
+            Me contacter ↗
+          </a>
         </nav>
       </header>
 
@@ -220,7 +251,9 @@ function App() {
               <span>PORTFOLIO PERSONNEL / 2026</span>
             </div>
 
-            <p className="hero-eyebrow">FUTURE INGÉNIEURE EN CYBERSÉCURITÉ</p>
+            <p className="hero-eyebrow">
+              FUTURE INGÉNIEURE EN CYBERSÉCURITÉ
+            </p>
 
             <h1>
               Comprendre.
@@ -252,35 +285,48 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Illustration graphique réseau futuriste">
-            <div className="visual-orbit orbit-a" />
-            <div className="visual-orbit orbit-b" />
-            <div className="visual-orbit orbit-c" />
+          {/* Photo intégrée à côté du texte d'accueil */}
+          <div className="hero-visual hero-profile-layout">
+            <div className="profile-orbit profile-orbit-one" />
+            <div className="profile-orbit profile-orbit-two" />
+            <div className="profile-orbit profile-orbit-three" />
 
-            <div className="visual-cross cross-a">+</div>
-            <div className="visual-cross cross-b">+</div>
-            <div className="visual-cross cross-c">+</div>
+            <span className="profile-cross profile-cross-one">+</span>
+            <span className="profile-cross profile-cross-two">+</span>
 
-            <div className="hero-core">
-              <div className="core-inner">
-                <span className="core-symbol">H<span>.</span></span>
-                <span className="core-caption">NETWORKS / SECURITY</span>
+            <div className="profile-frame">
+              <div className="profile-frame-inner">
+                <img
+                  src={maPhoto}
+                  alt="Portrait de Halimata"
+                  className="hero-profile-photo"
+                />
               </div>
             </div>
 
-            <div className="float-label label-top">
-              <span className="label-icon">⌁</span>
-              <span><small>FIELD 01</small><b>NETWORKS</b></span>
+            <div className="profile-label profile-label-top">
+              <span className="profile-label-icon">⌁</span>
+              <span>
+                <small>FIELD 01</small>
+                <b>NETWORKS</b>
+              </span>
               <i />
             </div>
 
-            <div className="float-label label-bottom">
-              <span className="label-icon">⬡</span>
-              <span><small>FIELD 02</small><b>CYBERSECURITY</b></span>
+            <div className="profile-label profile-label-bottom">
+              <span className="profile-label-icon">⬡</span>
+              <span>
+                <small>FIELD 02</small>
+                <b>CYBERSECURITY</b>
+              </span>
               <i />
             </div>
 
-            <div className="visual-coordinates">04°03' N<br />09°42' E</div>
+            <div className="visual-coordinates">
+              04°03' N
+              <br />
+              09°42' E
+            </div>
             <div className="visual-index">FIG. 001 — DIGITAL IDENTITY</div>
           </div>
 
@@ -301,7 +347,8 @@ function App() {
               <div className="about-title">
                 <h2>
                   La curiosité
-                  <br />est mon <span className="gradient-text">moteur.</span>
+                  <br />
+                  est mon <span className="gradient-text">moteur.</span>
                 </h2>
               </div>
 
@@ -371,7 +418,9 @@ function App() {
                 <br />
                 forme dans <span className="gradient-text">l'action.</span>
               </h2>
-              <p>Quelques projets et expériences de mon parcours informatique.</p>
+              <p>
+                Quelques projets et expériences de mon parcours informatique.
+              </p>
             </div>
           </Reveal>
 
@@ -401,7 +450,10 @@ function App() {
                 <div>
                   <p className="micro-label">FORMATION</p>
                   <h3>Informatique — 3e année</h3>
-                  <p>Développement, systèmes, réseaux et bases de la sécurité informatique.</p>
+                  <p>
+                    Développement, systèmes, réseaux et bases de la sécurité
+                    informatique.
+                  </p>
                 </div>
                 <span className="timeline-status">EN COURS</span>
               </div>
@@ -411,7 +463,10 @@ function App() {
                 <div>
                   <p className="micro-label">EXPÉRIENCE</p>
                   <h3>Stage en support informatique</h3>
-                  <p>Configuration de postes, logiciels, imprimantes et assistance technique.</p>
+                  <p>
+                    Configuration de postes, logiciels, imprimantes et
+                    assistance technique.
+                  </p>
                 </div>
                 <span className="timeline-status">PRATIQUE</span>
               </div>
@@ -421,7 +476,10 @@ function App() {
                 <div>
                   <p className="micro-label">OBJECTIF</p>
                   <h3>Ingénierie réseaux & cybersécurité</h3>
-                  <p>Approfondir les réseaux, les systèmes et les pratiques de sécurisation.</p>
+                  <p>
+                    Approfondir les réseaux, les systèmes et les pratiques
+                    de sécurisation.
+                  </p>
                 </div>
                 <span className="timeline-status future">NEXT MISSION</span>
               </div>
@@ -433,7 +491,9 @@ function App() {
           <div className="contact-frame">
             <div className="contact-orb" />
             <p className="section-kicker">05 / CONTACT</p>
-            <p className="contact-overline">UNE IDÉE · UNE OPPORTUNITÉ · UN ÉCHANGE</p>
+            <p className="contact-overline">
+              UNE IDÉE · UNE OPPORTUNITÉ · UN ÉCHANGE
+            </p>
             <h2>
               Créons quelque chose
               <br />
@@ -443,20 +503,24 @@ function App() {
               Je suis ouverte aux échanges, aux projets d'apprentissage
               et aux opportunités qui me permettront de progresser.
             </p>
-            <a className="button button-primary contact-button" href="mailto:adoumhalimata2@gmail.com">
+            <a
+              className="button button-primary contact-button"
+              href="mailto:adoumhalimata2@gmail.com"
+            >
               Entrer en contact <span>↗</span>
             </a>
-            <p className="replace-email">
-             
-            </p>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <a href="#accueil" className="logo">H<span>.</span></a>
+        <a href="#accueil" className="logo">
+          H<span>.</span>
+        </a>
         <p>CONÇU AVEC CURIOSITÉ & CAFÉ · © 2026</p>
-        <a href="#accueil" className="back-top">RETOUR EN HAUT ↑</a>
+        <a href="#accueil" className="back-top">
+          RETOUR EN HAUT ↑
+        </a>
       </footer>
     </div>
   );
