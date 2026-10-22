@@ -1584,3 +1584,16 @@ nav a:hover::after {
     padding: 10px;
   }
 }
+.hero-name {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  margin: 22px 0 14px;
+  text-transform: uppercase;
+}
+
+.hero-name span {
+  color: #a855f7;
+  text-shadow: 0 0 18px rgba(168, 85, 247, 0.7);
+}

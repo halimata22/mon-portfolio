@@ -251,17 +251,32 @@ function App() {
               <span>PORTFOLIO PERSONNEL / 2026</span>
             </div>
 
-            <p className="hero-eyebrow">
-              FUTURE INGÉNIEURE EN CYBERSÉCURITÉ
-            </p>
+            
+<p className="hero-eyebrow">
+  FUTURE INGÉNIEURE EN CYBERSÉCURITÉ
+</p>
 
-            <h1>
-              Comprendre.
-              <br />
-              Connecter.
-              <br />
-              <span className="gradient-text">Sécuriser.</span>
-            </h1>
+<div className="hero-name-wrap">
+  <p className="name-overline">IDENTITÉ NUMÉRIQUE</p>
+
+  <h2 className="hero-name">
+    <span className="name-initial">H</span>alimata Adoum <span className="name-dot">.</span>
+  </h2>
+
+  <div className="name-signature">
+    <span className="name-line"></span>
+    <span>TECH · NETWORKS · SECURITY</span>
+    <span className="name-line"></span>
+  </div>
+</div>
+
+<h1>
+  Comprendre.
+  <br />
+  Connecter.
+  <br />
+  <span className="gradient-text">Sécuriser.</span>
+</h1>
 
             <p className="hero-description">
               Étudiante en informatique, passionnée par les réseaux,
